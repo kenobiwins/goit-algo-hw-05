@@ -1,7 +1,6 @@
 from colorama import Fore
 from enum import Enum
 from typing import Dict
-from functools import wraps
 
 
 class Command(Enum):
