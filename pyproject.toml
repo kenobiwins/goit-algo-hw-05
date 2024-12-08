@@ -1,0 +1,25 @@
+[tool.black]
+line-length = 88            # Maximum line length, aligns with PEP 8
+target-version = ["py38", "py39", "py310", "py311"]  # Specify Python versions your project supports
+skip-string-normalization = false   # Allow Black to normalize string quotes
+include = '\.pyi?$'         # Include Python files and stubs
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"           # Match Black's style
+line_length = 88            # Keep line length consistent
+known_first_party = "my_project"  # Replace with your project's package name
+known_third_party = "django,flask,numpy,pandas"  # Add commonly used third-party libraries
+multi_line_output = 3       # Vertical hanging indent style
+include_trailing_comma = true
+skip = ["migrations"]       # Skip migrations folder (common in Django projects)
